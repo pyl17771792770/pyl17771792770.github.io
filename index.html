@@ -71,6 +71,114 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-sdk环境搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/31/sdk%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time class="dt-published" datetime="2021-08-31T09:36:04.275Z" itemprop="datePublished">2021-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Android-SDK环境搭建"><a href="#一、Android-SDK环境搭建" class="headerlink" title="一、Android SDK环境搭建"></a>一、<strong>Android SDK环境搭建</strong></h2><h4 id="1-配置-jdk环境"><a href="#1-配置-jdk环境" class="headerlink" title="1. 配置****jdk环境"></a>1. <strong>配置****jdk环境</strong></h4><p>因为安卓用Java语言开发，所以安装安卓环境——首先需要安装配置好<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/3c343ff70bc6ea0d377963df.html"><em><strong>*jdk环境*</strong></em></a>。</p>
+<p>推荐使用jdk 8以上的版本</p>
+<h4 id="2-SDK下载"><a href="#2-SDK下载" class="headerlink" title="2. SDK下载"></a>2. <strong>SDK下载</strong></h4><p>Android SDK包下载</p>
+<p>· 官网下载：<a target="_blank" rel="noopener" href="https://android-sdk.en.softonic.com/download">https://android-sdk.en.softonic.com/download</a></p>
+<p>· 网盘下载： <a target="_blank" rel="noopener" href="http://tools.android-studio.org/index.php/sdk">http://tools.android-studio.org/index.php/sdk</a></p>
+<p>安装后启动 <em><strong>*SDK Manager.exe*</strong></em> 程序就可以看到Android SDK Mannerger的主界面。</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps1.jpg" alt="img"> </p>
+<h3 id="Tools目录："><a href="#Tools目录：" class="headerlink" title="Tools目录："></a><strong>Tools目录：</strong></h3><p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps2.jpg" alt="img"> </p>
+<p>****Android SDK Tools****（必须，只需下载一个版本，一般选最新版本）：基础工具包，版本号带rc字样的是预览版。</p>
+<p>****Android SDK Platform-tools****（必须，只需下载一个版本，一般选最新版本）：从android2.3开始划出此目录，存放公用开发工具，比如adb、sqlite3等，被划分到了这里。</p>
+<p>****Android SDK Build-tools****（必须，可以安装多个版本）：Android项目构建工具。</p>
+<p><em><strong>*Android xxx（API xx）*</strong></em> 目录（可选的各平台开发工具）：</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps3.jpg" alt="img"> </p>
+<p>· Documentation for AndroidSdk（可选）：安卓开发者官网的一些离线文档，不过下载下来打开也很慢，后面会提供另外一个离线版。</p>
+<p><strong>·</strong> ****SDK Platform****（必须）：对应平台的开发工具，需要在哪个版本的平台下开发就下载哪个。</p>
+<p>· Samples for SDK（可选，此项在高版本tools中已不提供，需要在IDE里通过Import Sample引入，当然也可以下载离线版）：内置的安卓示例程序，推荐安装。</p>
+<p>· Sources for Android SDK（可选）：安卓API的源代码，推荐安装。</p>
+<p>· ARM /Intel xxxx Image（可选）：各个以Image结尾的东西是支持相应平台的模拟器，我们就把它想象成一个刷机包吧。（使用真机调试或使用其它模拟器的话不需要安装）</p>
+<p>****Extras目录****（可选的扩展）：</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps4.jpg" alt="img"> </p>
+<p>· Android Support Repository（可选）：主要是方便在gradle中使用Android Support Libraries，因为Google并没有把这些库发布到maven center或者jcenter去，而是使用了Google自己的maven仓库。</p>
+<p>· Intel x86 Emulator Accelerator(HAXM installer)（可选）：windows平台的Intel x86模拟器加速工具，配合Intel x86 atom/atom_64 System Image使用可加快模拟器的运行速度。</p>
+<h2 id="Android-SDK文件目录"><a href="#Android-SDK文件目录" class="headerlink" title="Android SDK文件目录"></a><strong>Android SDK文件目录</strong></h2><p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps5.jpg" alt="img"> </p>
+<h4 id="add-ons"><a href="#add-ons" class="headerlink" title="add-ons"></a><strong>add-ons</strong></h4><p>这里面保存着附加库，第三方公司为android 平台开发的附加功能系统。比如GoogleMaps，当然你如果安装了OphoneSDK，这里也会有一些类库在里面。</p>
+<h4 id="docs"><a href="#docs" class="headerlink" title="docs"></a><strong>docs</strong></h4><p>这里面是Android SDKAPI参考文档，所有的API都可以在这里查到。</p>
+<h4 id="extras"><a href="#extras" class="headerlink" title="extras"></a><strong>extras</strong></h4><p>该文件夹下存放了Android support v4，v7，v13，v17包； 还有google提供额USB驱动、Intel提供的硬件加速等附加工具包， 和market_licensing作为AndroidMarket版权保护组件，一般发布付费应用到电子市场可以用它来反盗版。</p>
+<h4 id="platforms"><a href="#platforms" class="headerlink" title="platforms"></a><strong>platforms</strong></h4><p>是每个平台的SDK真正的文件，存放了不同版本的android系统。里面会根据APILevel划分的SDK版本。</p>
+<h4 id="samples"><a href="#samples" class="headerlink" title="samples"></a><strong>samples</strong></h4><p>是Android SDK自带的默认示例工程，里面的apidemos强烈推荐初学者运行学 习，对于SQLite数据库操作可以查看NotePad这个例子，对于游戏开发Snake、LunarLander都是不错的例子，对于Android主 题开发Home则是androidm5时代的主题设计原理。</p>
+<h4 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a><strong>环境变量设置</strong></h4><p>· 系统变量里面添加变量名 ANDROID_HOME 路径为实际存放SDk的路径</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps6.jpg" alt="img"></p>
+<p>· 其他几个路径配置到系统环境Path中如下图所示：</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps7.jpg" alt="img"> </p>
+<h3 id="配置检测"><a href="#配置检测" class="headerlink" title="配置检测"></a><strong>配置检测</strong></h3><p>在cmd界面输入“adb” 和”appt”来判断安装是否成功。</p>
+<p>adb命令</p>
+<p><strong>C:\Users\Shuqing&gt;adb</strong></p>
+<p><strong>Android Debug Bridge version 1.0.39</strong></p>
+<p><strong>Revision 3db08f2c6889-android</strong></p>
+<p><strong>Installed as E:\Andriod_sdk\platform-tools\adb.exe</strong></p>
+<hr>
+<p><strong>global options:</strong></p>
+<p> <strong>-a     listen on all network interfaces, not just localhost</strong></p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps6.jpg" alt="img"></p>
+<p>· 其他几个路径配置到系统环境Path中如下图所示：</p>
+<p><img src="file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml8484\wps7.jpg" alt="img"> </p>
+<h3 id="配置检测-1"><a href="#配置检测-1" class="headerlink" title="配置检测"></a><strong>配置检测</strong></h3><p>在cmd界面输入“adb” 和”appt”来判断安装是否成功。</p>
+<p>adb命令</p>
+<p><strong>C:\Users\Shuqing&gt;adb</strong></p>
+<p><strong>Android Debug Bridge version 1.0.39</strong></p>
+<p><strong>Revision 3db08f2c6889-android</strong></p>
+<p><strong>Installed as E:\Andriod_sdk\platform-tools\adb.exe</strong></p>
+<hr>
+<p><strong>global options:</strong></p>
+<p> <strong>-a     listen on all network interfaces, not just localhost</strong></p>
+<p> <strong>-d     use USB device (error if multiple devices connected)</strong></p>
+<p> <strong>-e     use TCP/IP device (error if multiple TCP/IP devices available)</strong></p>
+<p> <strong>-s SERIAL</strong></p>
+<p>   <strong>use device with given serial number (overrides $ANDROID_SERIAL)</strong></p>
+<p> <strong>-p PRODUCT</strong></p>
+<p>   <strong>name or path (‘angler’/‘out/target/product/angler’);</strong></p>
+<p>   <strong>default $ANDROID_PRODUCT_OUT</strong></p>
+<p> <strong>-H     name of adb server host [default=localhost]</strong></p>
+<p> <strong>-P     port of adb server [default=5037]</strong></p>
+<p> <strong>-L SOCKET  listen on given socket for adb server [default=tcp:localhost:5037]</strong></p>
+<p>aapt命令</p>
+<p><strong>C:\Users\Shuqing&gt;aapt</strong></p>
+<p><strong>Android Asset Packaging Tool</strong></p>
+<p><strong>Usage:</strong></p>
+<p> <strong>aapt l[ist] [-v] [-a] file.{zip,jar,apk}</strong></p>
+<p>  <strong>List contents of Zip-compatible archive.</strong></p>
+<hr>
+<p> <strong>aapt d[ump] [–values] [–include-meta-data] WHAT file.{apk} [asset [asset …]]</strong></p>
+<p>  <strong>strings      Print the contents of the resource table string pool in the APK.</strong></p>
+<p>  <strong>badging      Print the label and icon for the app declared in APK.</strong></p>
+<p>  <strong>permissions    Print the permissions from the APK.</strong></p>
+<p>  <strong>resources     Print the resource table from the APK.</strong></p>
+<p>  <strong>configurations  Print the configurations in the APK.</strong></p>
+<p>  <strong>xmltree      Print the compiled xmls in the given assets.</strong></p>
+<p>  <strong>xmlstrings    Print the strings of the given compiled xml assets.</strong></p>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h4><p>· <a href="#m2">http://www.cnblogs.com/kangjianwei101/p/5621238.html#m2</a></p>
+<p>· <a target="_blank" rel="noopener" href="http://blog.csdn.net/aiynmimi/article/details/51028499">http://blog.csdn.net/aiynmimi/article/details/51028499</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/31/sdk%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="ckszvyo320000tgr7a69z2lh9" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-appium环境搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/31/appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
@@ -277,6 +385,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/08/31/sdk%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2021/08/31/appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
